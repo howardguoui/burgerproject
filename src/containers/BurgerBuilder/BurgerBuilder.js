@@ -5,7 +5,8 @@ import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 import Modal from '../../components/UI/Modal/Modal';
 import OrderSumary from '../../components/Burger/OrderSumary/OrderSumary';
 const INGREDIENT_PRICES = {
-    salad: 1,
+    lettuce: 1,
+    tomato: 1,
     cheese: 1.5,
     meat: 3,
     bacon: 2
@@ -18,12 +19,14 @@ class BurgerBuilder extends Component {
     state = {
         ingredients: {
             //key value pair
-            salad : 0,
+            lettuce : 0,
+            tomato : 0,
             bacon : 0,
             cheese: 0,
             meat: 0
+
         },
-        totalPrice: 10,
+        totalPrice: 5,
         purchasable: false,
         purchasing: false
     }
