@@ -13,6 +13,7 @@ You can find the most recent version of this guide [here](https://github.com/fac
   - [npm test](#npm-test)
   - [npm run build](#npm-run-build)
   - [npm run eject](#npm-run-eject)
+  - [npm run deploy](#npm-run-deploy)
 - [Supported Browsers](#supported-browsers)
 - [Supported Language Features](#supported-language-features)
 - [Syntax Highlighting in the Editor](#syntax-highlighting-in-the-editor)
