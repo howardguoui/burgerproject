@@ -1,14 +1,14 @@
 {
-  "main.css": "/howardreact/static/css/main.9d8d99a9.chunk.css",
-  "main.js": "/howardreact/static/js/main.d73c1911.chunk.js",
-  "main.js.map": "/howardreact/static/js/main.d73c1911.chunk.js.map",
-  "static/js/1.6105a37c.chunk.js": "/howardreact/static/js/1.6105a37c.chunk.js",
-  "static/js/1.6105a37c.chunk.js.map": "/howardreact/static/js/1.6105a37c.chunk.js.map",
+  "main.css": "/howardreact/static/css/main.eae0af1b.chunk.css",
+  "main.js": "/howardreact/static/js/main.6ccbc512.chunk.js",
+  "main.js.map": "/howardreact/static/js/main.6ccbc512.chunk.js.map",
+  "static/js/1.46780b80.chunk.js": "/howardreact/static/js/1.46780b80.chunk.js",
+  "static/js/1.46780b80.chunk.js.map": "/howardreact/static/js/1.46780b80.chunk.js.map",
   "runtime~main.js": "/howardreact/static/js/runtime~main.29650c0e.js",
   "runtime~main.js.map": "/howardreact/static/js/runtime~main.29650c0e.js.map",
-  "static/media/logo.svg": "/howardreact/static/media/logo.5d5d9eef.svg",
-  "static/css/main.9d8d99a9.chunk.css.map": "/howardreact/static/css/main.9d8d99a9.chunk.css.map",
+  "static/media/burger-logo.png": "/howardreact/static/media/burger-logo.b8503d26.png",
+  "static/css/main.eae0af1b.chunk.css.map": "/howardreact/static/css/main.eae0af1b.chunk.css.map",
   "index.html": "/howardreact/index.html",
-  "precache-manifest.613036f5e326feb01e349b8d198a0ce0.js": "/howardreact/precache-manifest.613036f5e326feb01e349b8d198a0ce0.js",
+  "precache-manifest.31f873c037a2591e9828a4d7a6f1eb10.js": "/howardreact/precache-manifest.31f873c037a2591e9828a4d7a6f1eb10.js",
   "service-worker.js": "/howardreact/service-worker.js"
 }
