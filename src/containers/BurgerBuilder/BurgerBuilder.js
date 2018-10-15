@@ -3,7 +3,8 @@ import Aux from '../../hoc/Auxiliary';
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 import Modal from '../../components/UI/Modal/Modal';
-import OrderSumary from '../../components/Burger/OrderSumary/OrderSumary';
+import Spinner from '../../components/UI/Spinner/Spinner';
+import OrderSummary from '../../components/Burger/OrderSumary/OrderSumary';
 import axios from '../../axios-orders';
 
 const INGREDIENT_PRICES = {
@@ -76,29 +77,30 @@ class BurgerBuilder extends Component {
     purchaseCancelHandler =() => {
         this.setState({purchasing: false});
     }
-    purchaseContinueHandler =() => {
+    purchaseContinueHandler = () => {
+        // alert('You continue!');
+        this.setState( { loading: true } );
         const order = {
             ingredients: this.state.ingredients,
             price: this.state.totalPrice,
             customer: {
-                name: 'Howard Guo',
+                name: 'Max Schwarzmüller',
                 address: {
                     street: 'Teststreet 1',
-                    zipCode: '07300',
-                    country: 'USA'
+                    zipCode: '41351',
+                    country: 'Germany'
                 },
                 email: 'test@test.com'
             },
             deliveryMethod: 'fastest'
         }
-        // alert('Order Success');
         axios.post( '/orders.json', order )
-        .then( () => {
-            this.setState( { loading: false, purchasing: false } );
-        } )
-        .catch( error => {
-            this.setState( { loading: false, purchasing: false } );
-        } );
+            .then( response => {
+                this.setState( { loading: false, purchasing: false } );
+            } )
+            .catch( error => {
+                this.setState( { loading: false, purchasing: false } );
+            } );
     }
     render() {
         const disabledInfo = {
@@ -107,15 +109,18 @@ class BurgerBuilder extends Component {
         for (let key in disabledInfo) {
             disabledInfo[key] = disabledInfo[key] <=0
         }
+        let orderSummary = <OrderSummary
+            ingredients={this.state.ingredients}
+            price={this.state.totalPrice}
+            purchaseCancelled={this.purchaseCancelHandler}
+            purchaseContinued={this.purchaseContinueHandler} />;
+        if ( this.state.loading ) {
+            orderSummary = <Spinner />;
+        }
         return (
             <Aux>
                 <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
-                    <OrderSumary
-                    price = {this.state.totalPrice}
-                    purchaseCancel = {this.purchaseCancelHandler}
-                    purchaseContinue = {this.purchaseContinueHandler}
-                    ingredients={this.state.ingredients}
-                    />
+                    {orderSummary}
                 </Modal>
                 <Burger ingredients= {this.state.ingredients} />
                 <BuildControls
