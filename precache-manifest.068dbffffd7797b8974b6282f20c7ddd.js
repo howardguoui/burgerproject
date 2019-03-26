@@ -32,8 +32,8 @@ self.__precacheManifest = [
     "url": "/howardreact/static/js/3.52691728.chunk.js"
   },
   {
-    "revision": "0d0fcdd32d95dadda28f",
-    "url": "/howardreact/static/js/4.0d0fcdd3.chunk.js"
+    "revision": "85ca89d8d80c638ff69f",
+    "url": "/howardreact/static/js/4.85ca89d8.chunk.js"
   },
   {
     "revision": "344c2b407967e5c29cbc",
@@ -44,7 +44,7 @@ self.__precacheManifest = [
     "url": "/howardreact/static/css/1.711fc62a.chunk.css"
   },
   {
-    "revision": "919ab6815b350696794c98b05627e571",
+    "revision": "f018d667efffdf6efd129c58a4da096d",
     "url": "/howardreact/index.html"
   }
 ];
