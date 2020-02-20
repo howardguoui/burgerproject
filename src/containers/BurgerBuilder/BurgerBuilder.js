@@ -9,7 +9,7 @@ import axios from '../../axios-orders';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 // import * as actionTypes from '../../store/actions';
 import * as actions from '../../store/actions/index';
-
+import BurgerHeader from '../../components/BurgerHeader/BurgerHeader';
 // const INGREDIENT_PRICES = {
 //     lettuce: 1,
 //     tomato: 1,
@@ -92,8 +92,8 @@ class BurgerBuilder extends Component {
         if (this.props.isAuthenticated) {
             this.setState( { purchasing: true } );
         } else {
-            this.props.onSetAuthRedirectPath('/checkout');
-            this.props.history.push('/auth');
+            this.props.onSetAuthRedirectPath('/burger/checkout');
+            this.props.history.push('/burger/auth');
         }
     }
 
@@ -135,7 +135,7 @@ class BurgerBuilder extends Component {
         //     pathname: '/checkout',
         //     search: '?' + queryString
         // });
-        this.props.history.push('/checkout');
+        this.props.history.push('/burger/checkout');
 
     }
 
@@ -195,6 +195,7 @@ class BurgerBuilder extends Component {
         if ( this.props.ings ) {
             burger = (
                 <React.Fragment>
+                    <BurgerHeader />
                     <Burger ingredients={this.props.ings} />
                     <BuildControls
                         ingredientAdded={this.props.onIngredientAdded}

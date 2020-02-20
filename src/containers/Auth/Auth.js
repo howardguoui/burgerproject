@@ -9,6 +9,7 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 import classes from './Auth.css';
 import * as actions from '../../store/actions/index';
 import { updateObject, checkValidity } from '../../shared/utility';
+import BurgerHeader from '../../components/BurgerHeader/BurgerHeader';
 class Auth extends Component {
     state = {
         controls: {
@@ -45,7 +46,7 @@ class Auth extends Component {
     }
 
     componentDidMount() {
-        if (!this.props.buildingBurger && this.props.authRedirectPath !== '/') {
+        if (!this.props.buildingBurger && this.props.authRedirectPath !== '/burger') {
             this.props.onSetAuthRedirectPath();
         }
     }
@@ -113,6 +114,8 @@ class Auth extends Component {
         }
 
         return (
+            <React.Fragment>
+            <BurgerHeader />
             <div className={classes.Auth}>
                 {authRedirect}
                 {errorMessage}
@@ -124,6 +127,7 @@ class Auth extends Component {
                     clicked={this.switchAuthModeHandler}
                     btnType="Danger">SWITCH TO {this.state.isSignup ? 'SIGNIN' : 'SIGNUP'}</Button>
             </div>
+            </React.Fragment>
         );
     }
 }
@@ -141,7 +145,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         onAuth: ( email, password, isSignup ) => dispatch( actions.auth( email, password, isSignup ) ),
-        onSetAuthRedirectPath: () => dispatch(actions.setAuthRedirectPath('/'))
+        onSetAuthRedirectPath: () => dispatch(actions.setAuthRedirectPath('/burger'))
     };
 };
 export default connect( mapStateToProps, mapDispatchToProps )( Auth );
