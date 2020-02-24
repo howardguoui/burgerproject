@@ -7,6 +7,7 @@ import Logout from './containers/Auth/Logout/Logout';
 import * as actions from './store/actions/index';
 import asyncComponent from './hoc/asyncComponent/asyncComponent';
 import hookComponent from './components/Hook/hook';
+import Main from './components/Main/Blog';
 const asyncCheckout = asyncComponent(() => {
   return import('./containers/Checkout/Checkout');
 });
@@ -27,6 +28,7 @@ class App extends Component {
         <Route path="/burger/auth" component={asyncAuth} />
         <Route path="/burger" exact component={BurgerBuilder} />
         <Route path="/burger/hook" exact component={hookComponent} />
+        <Route path="/" exact component={Main} />
       </Switch>
     );
 
@@ -39,13 +41,13 @@ class App extends Component {
           <Route path="/burger/hook" exact component={hookComponent} />
           <Route path="/burger/logout" component={Logout} />
           <Route path="/burger" exact component={BurgerBuilder} />
+          <Route path="/" exact component={Main} />
         </Switch>
       );
     }
 
     return (
       <div>
-        <Link to="/burger">Burger Project</Link>
         <Layout>
           {routes}
         </Layout>
