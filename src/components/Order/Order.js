@@ -1,7 +1,7 @@
 import React from 'react';
 
 import classes from './Order.css';
-import BurgerHeader from '../BurgerHeader/BurgerHeader';
+
 const order = ( props ) => {
     const ingredients = [];
 
@@ -27,14 +27,10 @@ const order = ( props ) => {
     });
 
     return (
-        <React.Fragment >
-        <BurgerHeader />
         <div className={classes.Order}>
             <p>Ingredients: {ingredientOutput}</p>
             <p>Price: <strong>USD {Number.parseFloat( props.price ).toFixed( 2 )}</strong></p>
         </div>
-        </React.Fragment>
-
     );
 };
 

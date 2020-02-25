@@ -10,7 +10,7 @@ class Logout extends Component {
     }
 
     render () {
-        return <Redirect to="/burger"/>;
+        return <Redirect to="/"/>;
     }
 }
 
