@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/howardreact/precache-manifest.6b0cadfdfefe39375c1101072d872841.js"
+  "/howardreact/precache-manifest.b4de832331f3c4e495ed100d0cb841fc.js"
 );
 
 workbox.clientsClaim();
