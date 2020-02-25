@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "46301ba58853d30e0e88",
+    "revision": "f12d482e885b5a4d73a6",
     "url": "/howardreact/static/css/main.171eb87a.chunk.css"
   },
   {
-    "revision": "46301ba58853d30e0e88",
-    "url": "/howardreact/static/js/main.46301ba5.chunk.js"
+    "revision": "f12d482e885b5a4d73a6",
+    "url": "/howardreact/static/js/main.f12d482e.chunk.js"
   },
   {
     "revision": "09221dc371054139c787",
@@ -44,7 +44,7 @@ self.__precacheManifest = [
     "url": "/howardreact/static/media/burger-logo.b8503d26.png"
   },
   {
-    "revision": "a51c90c2acf609ff9956bf8992642271",
+    "revision": "dc5177483fb4be7c0879d2efb4972c7b",
     "url": "/howardreact/index.html"
   }
 ];
