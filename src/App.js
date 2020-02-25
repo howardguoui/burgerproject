@@ -25,9 +25,9 @@ class App extends Component {
     let routes = (
       <Switch>
         <Route path="/auth" component={asyncAuth} />
-        <Route path="/" exact component={BurgerBuilder} />
+        <Route path="/howardreact" exact component={BurgerBuilder} />
         <Route path="/hook" exact component={hookComponent} />
-        <Redirect to="/ " />
+        <Redirect to="/howardreact" />
       </Switch>
     );
 
@@ -38,8 +38,8 @@ class App extends Component {
           <Route path="/orders" component={asyncOrders} />
           <Route path="/auth" component={asyncAuth} />
           <Route path="/logout" component={Logout} />
-          <Route path="/" exact component={BurgerBuilder} />
-          <Redirect to="/" />
+          <Route path="/howardreact" exact component={BurgerBuilder} />
+          <Redirect to="/howardreact" />
         </Switch>
       );
     }
