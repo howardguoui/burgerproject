@@ -82,6 +82,7 @@ export default function Blog() {
           <Grid container spacing={5} className={classes.mainGrid}>
             <Main title="Trend" posts={posts} />
             <Sidebar
+              key={sidebar.title}
               title={sidebar.title}
               description={sidebar.description}
               archives={sidebar.archives}
