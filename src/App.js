@@ -17,27 +17,27 @@ const asyncAuth = asyncComponent(() => {
   return import('./containers/Auth/Auth');
 });
 class App extends Component {
-  componentDidMount () {
+  componentDidMount() {
     this.props.onTryAutoSignup();
   }
 
-  render () {
+  render() {
     let routes = (
       <Switch>
-        <Route path="/auth" component={asyncAuth} />
+        <Route path="/howardreact/auth" component={asyncAuth} />
         <Route path="/howardreact" exact component={BurgerBuilder} />
-        <Route path="/hook" exact component={hookComponent} />
+        <Route path="/howardreact/hook" exact component={hookComponent} />
         <Redirect to="/howardreact" />
       </Switch>
     );
 
-    if ( this.props.isAuthenticated ) {
+    if (this.props.isAuthenticated) {
       routes = (
         <Switch>
-          <Route path="/checkout" component={asyncCheckout} />
-          <Route path="/orders" component={asyncOrders} />
-          <Route path="/auth" component={asyncAuth} />
-          <Route path="/logout" component={Logout} />
+          <Route path="/howardreact/checkout" component={asyncCheckout} />
+          <Route path="/howardreact/orders" component={asyncOrders} />
+          <Route path="/howardreact/auth" component={asyncAuth} />
+          <Route path="/howardreact/logout" component={Logout} />
           <Route path="/howardreact" exact component={BurgerBuilder} />
           <Redirect to="/howardreact" />
         </Switch>
@@ -46,24 +46,27 @@ class App extends Component {
 
     return (
       <div>
-        <Layout>
-          {routes}
-        </Layout>
+        <Layout>{routes}</Layout>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    isAuthenticated: state.auth.token !== null
+    isAuthenticated: state.auth.token !== null,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    onTryAutoSignup: () => dispatch( actions.authCheckState() )
+    onTryAutoSignup: () => dispatch(actions.authCheckState()),
   };
 };
 // have to use withRouter
-export default withRouter( connect( mapStateToProps, mapDispatchToProps )( App ) );
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(App)
+);

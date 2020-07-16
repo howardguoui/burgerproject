@@ -3,15 +3,23 @@ import React from 'react';
 import classes from './NavigationItems.css';
 import NavigationItem from './NavigationItem/NavigationItem';
 
-const navigationItems = ( props ) => (
-    <ul className={classes.NavigationItems}>
-        <NavigationItem link="/" exact>Burger Builder</NavigationItem>
-        <NavigationItem link="/hook" exact>Hook</NavigationItem>
-        {props.isAuthenticated ? <NavigationItem link="/orders">Orders</NavigationItem> : null}
-        {!props.isAuthenticated
-            ? <NavigationItem link="/auth">Authenticate</NavigationItem>
-            : <NavigationItem link="/logout">Logout</NavigationItem>}
-    </ul>
+const navigationItems = (props) => (
+  <ul className={classes.NavigationItems}>
+    <NavigationItem link="/howardreact" exact>
+      Burger Builder
+    </NavigationItem>
+    <NavigationItem link="/howardreact/hook" exact>
+      Hook
+    </NavigationItem>
+    {props.isAuthenticated ? (
+      <NavigationItem link="/howardreact/orders">Orders</NavigationItem>
+    ) : null}
+    {!props.isAuthenticated ? (
+      <NavigationItem link="/howardreact/auth">Authenticate</NavigationItem>
+    ) : (
+      <NavigationItem link="/howardreact/logout">Logout</NavigationItem>
+    )}
+  </ul>
 );
 
 export default navigationItems;
