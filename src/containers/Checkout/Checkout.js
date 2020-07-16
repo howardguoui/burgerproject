@@ -52,7 +52,7 @@ class Checkout extends Component {
   //     );
   // }
   render() {
-    console.log(this.props.match.path);
+    //this.props.purchased has a problem after purchase success and order again it will redirect to main page
     let summary = <Redirect to="/howardreact" />;
     if (this.props.ings) {
       const purchasedRedirect = this.props.purchased ? (
