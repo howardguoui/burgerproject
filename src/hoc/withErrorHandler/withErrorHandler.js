@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 
 import Modal from '../../components/UI/Modal/Modal';
+import Aux from '../Auxiliary';
 
 const withErrorHandler = (WrappedComponent, axios) => {
   return class extends Component {
-    state = { error: null };
+    state = {
+      error: null,
+    };
 
-    UNSAFE_componentWillMount() {
+    componentWillMount() {
       this.reqInterceptor = axios.interceptors.request.use((req) => {
         this.setState({ error: null });
         return req;
@@ -19,7 +22,7 @@ const withErrorHandler = (WrappedComponent, axios) => {
       );
     }
 
-    UNSAFE_componentWillUnmount() {
+    componentWillUnmount() {
       axios.interceptors.request.eject(this.reqInterceptor);
       axios.interceptors.response.eject(this.resInterceptor);
     }
@@ -30,7 +33,7 @@ const withErrorHandler = (WrappedComponent, axios) => {
 
     render() {
       return (
-        <React.Fragment>
+        <Aux>
           <Modal
             show={this.state.error}
             modalClosed={this.errorConfirmedHandler}
@@ -38,7 +41,7 @@ const withErrorHandler = (WrappedComponent, axios) => {
             {this.state.error ? this.state.error.message : null}
           </Modal>
           <WrappedComponent {...this.props} />
-        </React.Fragment>
+        </Aux>
       );
     }
   };
