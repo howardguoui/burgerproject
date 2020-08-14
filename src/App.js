@@ -28,21 +28,21 @@ class App extends Component {
   render() {
     let routes = (
       <Switch>
-        <Route path="/auth" component={asyncAuth} />
-        <Route path="/" exact component={BurgerBuilder} />
-        <Redirect to="/" />
+        <Route path="/howardreact/auth" component={asyncAuth} />
+        <Route path="/howardreact" exact component={BurgerBuilder} />
+        <Redirect to="/howardreact" />
       </Switch>
     );
 
     if (this.props.isAuthenticated) {
       routes = (
         <Switch>
-          <Route path="/checkout" component={asyncCheckout} />
-          <Route path="/orders" component={asyncOrders} />
-          <Route path="/logout" component={Logout} />
-          <Route path="/auth" component={asyncAuth} />
-          <Route path="/" exact component={BurgerBuilder} />
-          <Redirect to="/" />
+          <Route path="/howardreact/checkout" component={asyncCheckout} />
+          <Route path="/howardreact/orders" component={asyncOrders} />
+          <Route path="/howardreact/logout" component={Logout} />
+          <Route path="/howardreact/auth" component={asyncAuth} />
+          <Route path="/howardreact" exact component={BurgerBuilder} />
+          <Redirect to="/howardreact" />
         </Switch>
       );
     }
