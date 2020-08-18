@@ -1,59 +1,71 @@
-import React, { Component } from 'react';
+import React, { useEffect, Suspense } from 'react';
 import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import asyncComponent from './hoc/asyncComponent/asyncComponent';
 
 import Layout from './hoc/Layout/Layout';
 import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';
 import Logout from './containers/Auth/Logout/Logout';
 import * as actions from './store/actions/index';
 
-const asyncCheckout = asyncComponent(() => {
+const Checkout = React.lazy(() => {
   return import('./containers/Checkout/Checkout');
 });
 
-const asyncOrders = asyncComponent(() => {
+const Orders = React.lazy(() => {
   return import('./containers/Orders/Orders');
 });
 
-const asyncAuth = asyncComponent(() => {
+const Auth = React.lazy(() => {
   return import('./containers/Auth/Auth');
 });
 
-class App extends Component {
-  componentDidMount() {
-    this.props.onTryAutoSignup();
-  }
+const app = (props) => {
+  const { onTryAutoSignup } = props;
 
-  render() {
-    let routes = (
+  useEffect(
+    () => {
+      onTryAutoSignup();
+    },
+    [onTryAutoSignup]
+  );
+  let routes = (
+    <Switch>
+      <Route path="/howardreact/auth" render={(props) => <Auth {...props} />} />
+      <Route path="/howardreact/" exact component={BurgerBuilder} />
+      <Redirect to="/howardreact/" />
+    </Switch>
+  );
+
+  if (props.isAuthenticated) {
+    routes = (
       <Switch>
-        <Route path="/howardreact/auth" component={asyncAuth} />
-        <Route path="/howardreact" exact component={BurgerBuilder} />
-        <Redirect to="/howardreact" />
+        <Route
+          path="/howardreact/checkout"
+          render={(props) => <Checkout {...props} />}
+        />
+        <Route
+          path="/howardreact/orders"
+          render={(props) => <Orders {...props} />}
+        />
+        <Route path="/howardreact/logout" component={Logout} />
+        <Route
+          path="/howardreact/auth"
+          render={(props) => <Auth {...props} />}
+        />
+        <Route path="/howardreact/" exact component={BurgerBuilder} />
+        <Redirect to="/howardreact/" />
       </Switch>
     );
-
-    if (this.props.isAuthenticated) {
-      routes = (
-        <Switch>
-          <Route path="/howardreact/checkout" component={asyncCheckout} />
-          <Route path="/howardreact/orders" component={asyncOrders} />
-          <Route path="/howardreact/logout" component={Logout} />
-          <Route path="/howardreact/auth" component={asyncAuth} />
-          <Route path="/howardreact" exact component={BurgerBuilder} />
-          <Redirect to="/howardreact" />
-        </Switch>
-      );
-    }
-
-    return (
-      <div>
-        <Layout>{routes}</Layout>
-      </div>
-    );
   }
-}
+
+  return (
+    <div>
+      <Layout>
+        <Suspense fallback={<p>Loading...</p>}>{routes}</Suspense>
+      </Layout>
+    </div>
+  );
+};
 
 const mapStateToProps = (state) => {
   return {
@@ -71,5 +83,5 @@ export default withRouter(
   connect(
     mapStateToProps,
     mapDispatchToProps
-  )(App)
+  )(app)
 );
