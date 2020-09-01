@@ -8,8 +8,8 @@ const navigationItems = (props) => (
     <NavigationItem link="/howardreact" exact>
       Burger Builder
     </NavigationItem>
-    <NavigationItem link="/howardreact/hook" exact>
-      Hook
+    <NavigationItem link="/howardreact/todo-list" exact>
+      TODO List
     </NavigationItem>
     {props.isAuthenticated ? (
       <NavigationItem link="/howardreact/orders">Orders</NavigationItem>

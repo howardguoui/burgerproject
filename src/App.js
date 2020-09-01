@@ -4,7 +4,9 @@ import { connect } from 'react-redux';
 
 import Layout from './hoc/Layout/Layout';
 import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';
+import TodoList from './components/TodoList/todoList';
 import Logout from './containers/Auth/Logout/Logout';
+
 import * as actions from './store/actions/index';
 
 const Checkout = React.lazy(() => {
@@ -32,6 +34,7 @@ const app = (props) => {
     <Switch>
       <Route path="/howardreact/auth" render={(props) => <Auth {...props} />} />
       <Route path="/howardreact/" exact component={BurgerBuilder} />
+      <Route path="/howardreact/todo-list" exact component={TodoList} />
       <Redirect to="/howardreact/" />
     </Switch>
   );
@@ -53,6 +56,7 @@ const app = (props) => {
           render={(props) => <Auth {...props} />}
         />
         <Route path="/howardreact/" exact component={BurgerBuilder} />
+        <Route path="/howardreact/todo-list" exact component={BurgerBuilder} />
         <Redirect to="/howardreact/" />
       </Switch>
     );
