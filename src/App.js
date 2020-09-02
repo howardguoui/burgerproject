@@ -32,10 +32,13 @@ const app = (props) => {
   );
   let routes = (
     <Switch>
-      <Route path="/howardreact/auth" render={(props) => <Auth {...props} />} />
-      <Route path="/howardreact/" exact component={BurgerBuilder} />
-      <Route path="/howardreact/todo-list" exact component={TodoList} />
-      <Redirect to="/howardreact/" />
+      <Route
+        path="/burgerproject/auth"
+        render={(props) => <Auth {...props} />}
+      />
+      <Route path="/burgerproject/" exact component={BurgerBuilder} />
+      <Route path="/burgerproject/todo-list" exact component={TodoList} />
+      <Redirect to="/burgerproject/" />
     </Switch>
   );
 
@@ -43,21 +46,25 @@ const app = (props) => {
     routes = (
       <Switch>
         <Route
-          path="/howardreact/checkout"
+          path="/burgerproject/checkout"
           render={(props) => <Checkout {...props} />}
         />
         <Route
-          path="/howardreact/orders"
+          path="/burgerproject/orders"
           render={(props) => <Orders {...props} />}
         />
-        <Route path="/howardreact/logout" component={Logout} />
+        <Route path="/burgerproject/logout" component={Logout} />
         <Route
-          path="/howardreact/auth"
+          path="/burgerproject/auth"
           render={(props) => <Auth {...props} />}
         />
-        <Route path="/howardreact/" exact component={BurgerBuilder} />
-        <Route path="/howardreact/todo-list" exact component={BurgerBuilder} />
-        <Redirect to="/howardreact/" />
+        <Route path="/burgerproject/" exact component={BurgerBuilder} />
+        <Route
+          path="/burgerproject/todo-list"
+          exact
+          component={BurgerBuilder}
+        />
+        <Redirect to="/burgerproject/" />
       </Switch>
     );
   }

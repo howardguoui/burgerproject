@@ -30,7 +30,7 @@
 //     this.props.history.goBack();
 //   };
 //   checkoutContinuedHandler = () => {
-//     this.props.history.replace('/howardreact/checkout/contact-data');
+//     this.props.history.replace('/burgerproject/checkout/contact-data');
 //   };
 //   // render() {
 //   //     return (
@@ -53,10 +53,10 @@
 //   // }
 //   render() {
 //     //this.props.purchased has a problem after purchase success and order again it will redirect to main page
-//     let summary = <Redirect to="/howardreact" />;
+//     let summary = <Redirect to="/burgerproject" />;
 //     if (this.props.ings) {
 //       const purchasedRedirect = this.props.purchased ? (
-//         <Redirect to="/howardreact" />
+//         <Redirect to="/burgerproject" />
 //       ) : null;
 //       summary = (
 //         <div>
@@ -99,13 +99,13 @@ const checkout = (props) => {
   };
 
   const checkoutContinuedHandler = () => {
-    props.history.replace('/howardreact/checkout/contact-data');
+    props.history.replace('/burgerproject/checkout/contact-data');
   };
 
-  let summary = <Redirect to="/howardreact" />;
+  let summary = <Redirect to="/burgerproject" />;
   if (props.ings) {
     const purchasedRedirect = props.purchased ? (
-      <Redirect to="/howardreact" />
+      <Redirect to="/burgerproject" />
     ) : null;
     summary = (
       <div>

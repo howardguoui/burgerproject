@@ -5,19 +5,19 @@ import NavigationItem from './NavigationItem/NavigationItem';
 
 const navigationItems = (props) => (
   <ul className={classes.NavigationItems}>
-    <NavigationItem link="/howardreact" exact>
+    <NavigationItem link="/burgerproject" exact>
       Burger Builder
     </NavigationItem>
-    <NavigationItem link="/howardreact/todo-list" exact>
+    <NavigationItem link="/burgerproject/todo-list" exact>
       TODO List
     </NavigationItem>
     {props.isAuthenticated ? (
-      <NavigationItem link="/howardreact/orders">Orders</NavigationItem>
+      <NavigationItem link="/burgerproject/orders">Orders</NavigationItem>
     ) : null}
     {!props.isAuthenticated ? (
-      <NavigationItem link="/howardreact/auth">Authenticate</NavigationItem>
+      <NavigationItem link="/burgerproject/auth">Authenticate</NavigationItem>
     ) : (
-      <NavigationItem link="/howardreact/logout">Logout</NavigationItem>
+      <NavigationItem link="/burgerproject/logout">Logout</NavigationItem>
     )}
   </ul>
 );

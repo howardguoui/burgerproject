@@ -43,7 +43,7 @@ const auth = (props) => {
   const [isSignup, setIsSignup] = useState(true);
 
   useEffect(() => {
-    if (!props.buildingBurger && props.authRedirectPath !== '/howardreact') {
+    if (!props.buildingBurger && props.authRedirectPath !== '/burgerproject') {
       props.onSetAuthRedirectPath();
     }
   }, []);
@@ -137,7 +137,7 @@ const mapDispatchToProps = (dispatch) => {
     onAuth: (email, password, isSignup) =>
       dispatch(actions.auth(email, password, isSignup)),
     onSetAuthRedirectPath: () =>
-      dispatch(actions.setAuthRedirectPath('/howardreact')),
+      dispatch(actions.setAuthRedirectPath('/burgerproject')),
   };
 };
 

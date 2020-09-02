@@ -59,8 +59,8 @@ const burgerBuilder = (props) => {
     if (isAuthenticated) {
       setPurchasing(true);
     } else {
-      onSetAuthRedirectPath('/howardreact/checkout');
-      props.history.push('/howardreact/auth');
+      onSetAuthRedirectPath('/burgerproject/checkout');
+      props.history.push('/burgerproject/auth');
     }
   };
 
@@ -70,7 +70,7 @@ const burgerBuilder = (props) => {
 
   const purchaseContinueHandler = () => {
     onInitPurchase();
-    props.history.push('/howardreact/checkout');
+    props.history.push('/burgerproject/checkout');
   };
 
   const disabledInfo = {

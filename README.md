@@ -1,12 +1,12 @@
 # Summary
 
-#### website: https://howardguoui.github.io/howardreact/
+#### website: https://howardguoui.github.io/burgerproject/
 
     following are my initial route. TODO: need to be change
         <Route path="/auth" component={asyncAuth} />
-        <Route path="/howardreact" exact component={BurgerBuilder} />
+        <Route path="/burgerproject" exact component={BurgerBuilder} />
         <Route path="/hook" exact component={hookComponent} />
-        <Redirect to="/howardreact" />
+        <Redirect to="/burgerproject" />
       </Switch>
     );
 
@@ -17,12 +17,13 @@
           <Route path="/orders" component={asyncOrders} />
           <Route path="/auth" component={asyncAuth} />
           <Route path="/logout" component={Logout} />
-          <Route path="/howardreact" exact component={BurgerBuilder} />
-          <Redirect to="/howardreact" />
-
-
+          <Route path="/burgerproject" exact component={BurgerBuilder} />
+          <Redirect to="/burgerproject" />
 
 #### https://console.firebase.google.com/u/0/project/react-my-burger-21571/
+
 #### npm install
-#### npm start 
+
+#### npm start
+
 #### npm run deploy
