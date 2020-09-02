@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/howardreact/precache-manifest.7858aa9cc9d89015fe5d3b3df858b407.js"
+  "/burgerproject/precache-manifest.fb4a082b6e7fa78a1b58c0644f5618d3.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/howardreact/index.html", {
+workbox.routing.registerNavigationRoute("/burgerproject/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
