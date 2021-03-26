@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "20d4708b84e33c5ba372",
-    "url": "/burgerproject/static/css/main.60b9812b.chunk.css"
+    "revision": "3c008840ea6b52d32b9e",
+    "url": "/burgerproject/static/css/main.eb555c11.chunk.css"
   },
   {
-    "revision": "20d4708b84e33c5ba372",
-    "url": "/burgerproject/static/js/main.20d4708b.chunk.js"
+    "revision": "3c008840ea6b52d32b9e",
+    "url": "/burgerproject/static/js/main.3c008840.chunk.js"
   },
   {
     "revision": "ee374debcb15a369d3a5",
     "url": "/burgerproject/static/js/runtime~main.ee374deb.js"
   },
   {
-    "revision": "94fba91c4352aaeaf1fe",
-    "url": "/burgerproject/static/js/2.94fba91c.chunk.js"
+    "revision": "a85e3a00b0f308eac2c3",
+    "url": "/burgerproject/static/js/2.a85e3a00.chunk.js"
   },
   {
     "revision": "da62b489956dec403a0f",
@@ -44,7 +44,7 @@ self.__precacheManifest = [
     "url": "/burgerproject/static/media/burger-logo.b8503d26.png"
   },
   {
-    "revision": "69acb058ab0cd8397165ad4e1784bd08",
+    "revision": "d5744738c23c52ad70d06f8b3e60a46a",
     "url": "/burgerproject/index.html"
   }
 ];
